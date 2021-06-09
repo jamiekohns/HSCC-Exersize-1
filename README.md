@@ -32,3 +32,13 @@ Other metrics provided by the API may be useful.
 ## Notes
 
 This API is read-only (there are no endpoints for saving data, only fetching data). The author requests that you do not hit the API in rapid succession - don't try to download a dozen locations all at once. You might built in some kind of rate-limiting for this.
+
+Composer has been initialized with the dot-env library. You'll need to run `composer install` in your terminal after cloning the repository in order to get everything installed.
+
+Composer also initializes the `/src` directory as the `\App` namespace, so you can namespace everything in directories under `/src`. For example: in the `/src/Database` directory, the namespace for classes will be `\App\Database`, and in the `/src/RestRequest` directory, the namespace is `\App\RestRequest`. New directories should be camel-cased, starting with an upper-case letter.
+
+## Base Classes
+
+The `Database` and `RestRequest` classes have been included already. You should __extend__ these in your app. For example: every database table should have it's own __child class__ of `Database` that handles SELECT, INSERT, UPDATE, etc. for that table. There should only be one __child__ of `RestRequest`- that should fetch all weather data from the API.
+
+For examples of how these work, please refer to last year's application: https://github.com/jamiekohns/BDPA-HSCC-Practice/tree/main/app
