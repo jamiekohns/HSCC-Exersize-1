@@ -11,11 +11,17 @@
                 <!-- <a class="nav-item nav-link" href="/">Checkout</a> -->
 
             </div>
+        <div class="col col-md w-100 justify-content-center">
+            <form method='get' action="<?=$_ENV['BASE_URL']?>">
+                <input name='search' type='search' placeholder='search'>
+                <!-- <button class = 'btn btn-primary'type="submit"> Search </button> -->
+            </form>
+        </div>
             <div class="navbar-nav ml-auto">
 
                 <?php
                     $session_status = session_status();
-                    if(isset($_SESSION['user'])|| isset($_COOKIE['user'])){
+                    if(isset($_SESSION['user'])){
                         $status = 2;
                     } else{
                         $status = 1;

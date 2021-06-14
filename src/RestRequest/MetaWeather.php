@@ -1,17 +1,24 @@
 <?php
-
+ 
 namespace App\RestRequest;
-
-class MetaWeather{
-
-    public function search($search){
-        
-        parent::send($endpoint)
-
-    }
-
-    public function location($location){
-
-
-    }
+ 
+class MetaWeather extends RestRequest{
+ 
+   public function __construct(){
+        parent::__construct('location');
+   }
+ 
+   public function search($search){
+       $endpoint = '/search/?query=' . $search;
+       $response = parent::send($endpoint);
+       return $response;
+ 
+   }
+ 
+   public function location($woeid){
+       $response = parent::send('/' . $woeid . '/');
+       return $response;
+ 
+   }
 }
+
