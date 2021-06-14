@@ -6,7 +6,7 @@ class RestRequest {
     protected $baseUrl;
 
     public function __construct(string $baseUrl){
-        $this->baseUrl = $_ENV['API_BASE_URL'] . '/' . $baseUrl;
+        $this->baseUrl = $_ENV['API_BASE_URL'] . $baseUrl;
     }
 
     protected function send(string $endpoint){
@@ -15,6 +15,7 @@ class RestRequest {
             $this->baseUrl,
             $endpoint
         );
+        //return $url;
 
         $ch = curl_init();
 
@@ -27,7 +28,7 @@ class RestRequest {
         ]);
 
         $response = curl_exec($ch);
-        // var_dump($response);
+        //var_dump($response);
         $response = json_decode($response, true);
 
         return $response;
