@@ -89,7 +89,7 @@ function makeWeather($n, $weather_information,$city){
                     <div class="temp-details flex-grow-1">
                         <p class="my-1"> <img src="https://i.imgur.com/B9kqOzp.png" height="17px"> <span>' . $wind  .'</span> </p>
                         <p class="my-1"> <i class="fa fa-tint mr-2" aria-hidden="true"></i> <span>'. $weather_information["consolidated_weather"][$n]['humidity'] . '%' .'</span> </p>
-                        <p class="my-1"> <h6> Air Pressure </h6> <span>'. $weather_information["consolidated_weather"][$n]["air_pressure"] . ' psi' .'</span> </p>
+                        <p class="my-1"> <h6> Air Pressure </h6> <span>'. $weather_information["consolidated_weather"][$n]["air_pressure"] . ' mBar' .'</span> </p>
                     </div>
                     <div> <img src="https://www.metaweather.com/static/img/weather/png/' . $weather_information['consolidated_weather'][$n]['weather_state_abbr'] .'.png" width="100px"> </div>
                 </div>
