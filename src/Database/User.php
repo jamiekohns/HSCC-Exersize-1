@@ -36,6 +36,7 @@ class User extends Database {
     public function signup(string $first_name, string $last_name, string $middle_name = NULL, string $password, string $email){
         //die($first_name . $last_name . $middle_name. $password. $email);
         
+
         $query = $this->db->prepare('INSERT INTO `users` (first_name, last_name, password_hash, middle_name, email_address) VALUES (:first_name, :last_name, :password_hash, :middle_name, :email_address)');
 
 
@@ -47,6 +48,8 @@ class User extends Database {
             ':middle_name' => $middle_name,
             ':email_address' => $email,
         ]); 
+
+        
 
         
     }
